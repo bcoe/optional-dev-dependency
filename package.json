@@ -1,0 +1,40 @@
+{
+  "name": "optional-dev-dependency",
+  "version": "1.0.0",
+  "description": "try to install an optional development dependency, YOLO if you can't.",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "standard",
+    "test": "nyc ./node_modules/.bin/_mocha --timeout=30000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bcoe/optional-dev-dependency.git"
+  },
+  "keywords": [
+    "optional",
+    "install",
+    "npm",
+    "install"
+  ],
+  "author": "Ben Coe <ben@npmjs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcoe/npm-optional-dev-dependency/issues"
+  },
+  "homepage": "https://github.com/bcoe/optional-dev-dependency#readme",
+  "dependencies": {
+    "async": "^1.4.2",
+    "lodash.assign": "^3.2.0",
+    "win-spawn": "^2.0.0",
+    "yargs": "^3.24.0"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "coveralls": "^2.11.4",
+    "mocha": "^2.3.2",
+    "nyc": "^3.2.2",
+    "rimraf": "^2.4.3",
+    "standard": "^5.2.2"
+  }
+}
