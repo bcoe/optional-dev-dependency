@@ -12,6 +12,21 @@ if you are unable to. I found this useful for simulating optional-dev-dependenci
 optional-dev-dependency lodash fffffffgggggg
 ```
 
+## Example
+
+Here's an example from `node_redis`:
+
+```json
+{
+  "name": "redis",
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": "nyc ./node_modules/.bin/_mocha ./test/*.js ./test/commands/*.js ./test/parser/*.js --timeout=8000",
+    "pretest": "optional-dev-dependency hiredis"
+  }
+}
+```
+
 ## License
 
 ISC
