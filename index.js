@@ -8,12 +8,13 @@ module.exports = function (packages, _options, cb) {
     _options = {}
   }
 
+  cb = cb || function () {}
+
   var options = assign({
-    stdio: 'inherit',
-    concurrency: 1
+    stdio: 'inherit'
   }, _options)
 
-  async.eachLimit(packages, options.concurrency, function (pkg, next) {
+  async.eachLimit(packages, 1, function (pkg, next) {
     var child = spawn('npm', ['install', pkg], {stdio: options.stdio})
     child.on('close', function () {
       return next()

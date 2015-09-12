@@ -1,7 +1,7 @@
 /* global describe, it, beforeEach */
 
 var fs = require('fs')
-var npmTryInstall = require('../')
+var optionalDevDependency = require('../')
 var rimraf = require('rimraf')
 
 require('chai').should()
@@ -13,14 +13,14 @@ describe('optional-dev-dependency', function () {
   })
 
   it('installs a module successfully', function (done) {
-    npmTryInstall(['camelcase'], {stdio: null}, function () {
+    optionalDevDependency(['camelcase'], {stdio: null}, function () {
       fs.existsSync('./node_modules/camelcase').should.equal(true)
       return done()
     })
   })
 
   it('installs more than one module successfully', function (done) {
-    npmTryInstall(['camelcase', 'decamelize'], {stdio: null}, function () {
+    optionalDevDependency(['camelcase', 'decamelize'], {stdio: null}, function () {
       fs.existsSync('./node_modules/camelcase').should.equal(true)
       fs.existsSync('./node_modules/decamelize').should.equal(true)
       return done()
@@ -28,13 +28,13 @@ describe('optional-dev-dependency', function () {
   })
 
   it('handles an error from npm', function (done) {
-    npmTryInstall(['missing-aaabbbcccddd'], {stdio: null}, function () {
+    optionalDevDependency(['missing-aaabbbcccddd'], {stdio: null}, function () {
       return done()
     })
   })
 
   it('handles some errors combined with some successes', function (done) {
-    npmTryInstall(['camelcase', 'missing-aaabbbcccddd'], {stdio: null}, function () {
+    optionalDevDependency(['camelcase', 'missing-aaabbbcccddd'], {stdio: null}, function () {
       fs.existsSync('./node_modules/camelcase').should.equal(true)
       return done()
     })

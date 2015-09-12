@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "try to install an optional development dependency, YOLO if you can't.",
   "main": "index.js",
+  "bin": "./bin/odd.js",
   "scripts": {
     "pretest": "standard",
-    "test": "nyc ./node_modules/.bin/_mocha --timeout=30000"
+    "test": "nyc ./node_modules/.bin/_mocha --timeout=30000",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
