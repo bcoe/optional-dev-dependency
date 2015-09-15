@@ -15,10 +15,15 @@ module.exports = function (packages, _options, cb) {
   }, _options)
 
   async.eachLimit(packages, 1, function (pkg, next) {
-    var child = spawn('npm', ['install', pkg], {stdio: options.stdio})
-    child.on('close', function () {
+    try {
+      require(pkg)
       return next()
-    })
+    } catch (err) {
+      var child = spawn('npm', ['install', pkg], {stdio: options.stdio})
+      child.on('close', function () {
+        return next()
+      })
+    }
   }, function (err) {
     return cb(err)
   })
