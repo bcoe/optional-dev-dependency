@@ -1,3 +1,5 @@
+'use strict'
+
 var assign = require('lodash.assign')
 var async = require('async')
 var spawn = require('win-spawn')

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict'
+
 var yargs = require('yargs')
   .usage('$0 package [options]')
   .option('s', {
