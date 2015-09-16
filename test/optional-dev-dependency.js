@@ -41,4 +41,16 @@ describe('optional-dev-dependency', function () {
       return done()
     })
   })
+
+  it('does not install a dependency if it already exists', function (done) {
+    var delta = 25
+    optionalDevDependency(['camelcase'], {stdio: null}, function () {
+      var start = (new Date()).getTime()
+      optionalDevDependency(['camelcase'], {stdio: null}, function () {
+        var stop = (new Date()).getTime()
+        ;(stop - start).should.be.lt(delta)
+        return done()
+      })
+    })
+  })
 })
