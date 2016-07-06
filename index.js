@@ -2,7 +2,7 @@
 
 var assign = require('lodash.assign')
 var async = require('async')
-var spawn = require('win-spawn')
+var spawn = require('cross-spawn')
 
 module.exports = function (packages, _options, cb) {
   if (typeof _options === 'function') {
