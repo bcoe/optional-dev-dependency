@@ -21,6 +21,20 @@ describe('optional-dev-dependency', function () {
     })
   })
 
+  it('installs a module with a specific version successfully if found', function (done) {
+    optionalDevDependency(['camelcase@1.1.0'], {stdio: null}, function () {
+      fs.existsSync('./node_modules/camelcase').should.equal(true)
+      return done()
+    })
+  })
+
+  it('handles version not found error from npm', function (done) {
+    optionalDevDependency(['camelcase@1.0.999'], {stdio: null}, function () {
+      fs.existsSync('./node_modules/camelcase').should.equal(false)
+      return done()
+    })
+  })
+
   it('installs more than one module successfully', function (done) {
     optionalDevDependency(['camelcase', 'decamelize'], {stdio: null}, function () {
       fs.existsSync('./node_modules/camelcase').should.equal(true)

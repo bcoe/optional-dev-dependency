@@ -9,8 +9,10 @@ For when you want to try to install a module, but want to keep on truckin'
 if you are unable to. I found this useful for simulating optional-dev-dependencies.
 
 ```shell
-optional-dev-dependency lodash fffffffgggggg
+optional-dev-dependency lodash redis@2.2.3 fffffffgggggg
 ```
+
+All different [npm install styles](https://docs.npmjs.com/cli/install) are supported besides the git remote url
 
 ## Example
 
@@ -20,8 +22,6 @@ Here's an example from `node_redis`:
 {
   "name": "redis",
   "scripts": {
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": "nyc ./node_modules/.bin/_mocha ./test/*.js ./test/commands/*.js ./test/parser/*.js --timeout=8000",
     "pretest": "optional-dev-dependency hiredis"
   }
 }
