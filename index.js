@@ -1,7 +1,7 @@
 'use strict'
 
 var assign = require('lodash.assign')
-var async = require('async')
+var eachLimit = require('async').eachLimit
 var spawn = require('cross-spawn')
 
 module.exports = function (packages, _options, cb) {
@@ -16,8 +16,8 @@ module.exports = function (packages, _options, cb) {
     stdio: 'inherit'
   }, _options)
 
-  async.eachLimit(packages, 1, function (arg, next) {
-    var pkg = arg.split('@')[0]
+  eachLimit(packages, 1, function (arg, next) {
+    var pkg = arg.substr(0, arg.indexOf('@')) || arg
     try {
       // TODO: Either skip this part if a version has been provided or check the package json version
       require.resolve(pkg)
