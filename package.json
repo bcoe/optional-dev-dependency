@@ -1,6 +1,6 @@
 {
   "name": "optional-dev-dependency",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "try to install an optional development dependency, YOLO if you can't.",
   "main": "index.js",
   "bin": "./bin/odd.js",
