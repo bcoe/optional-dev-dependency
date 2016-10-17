@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/bcoe/optional-dev-dependency#readme",
   "dependencies": {
+    "async": "^2.1.2",
     "cross-spawn": "^4.0.2",
     "lodash.assign": "^4.2.0",
     "yargs": "^6.2.0"
@@ -41,5 +42,7 @@
     "standard": "^8.4.0",
     "standard-version": "^3.0.0"
   },
-  "engines": { "node" : ">=4" }
+  "engines": {
+    "node": ">=4"
+  }
 }
