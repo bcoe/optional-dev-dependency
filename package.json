@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": "./bin/odd.js",
   "scripts": {
+    "clean": "rimraf .nyc_output/ coverage/",
     "pretest": "standard",
     "test": "nyc ./node_modules/.bin/_mocha --timeout=30000",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
@@ -27,18 +28,18 @@
   },
   "homepage": "https://github.com/bcoe/optional-dev-dependency#readme",
   "dependencies": {
-    "async": "^2.0.0-rc.6",
-    "cross-spawn": "^4.0.0",
-    "lodash.assign": "^4.0.9",
-    "yargs": "^4.7.1"
+    "cross-spawn": "^4.0.2",
+    "lodash.assign": "^4.2.0",
+    "yargs": "^6.2.0"
   },
   "devDependencies": {
-    "chai": "^3.2.0",
+    "chai": "^3.5.0",
     "coveralls": "^2.11.4",
-    "mocha": "^2.3.2",
-    "nyc": "^7.0.0-alpha.5",
-    "rimraf": "^2.4.3",
-    "standard": "^7.1.2",
-    "standard-version": "^2.3.1"
-  }
+    "mocha": "^3.1.2",
+    "nyc": "^8.3.1",
+    "rimraf": "^2.5.4",
+    "standard": "^8.4.0",
+    "standard-version": "^3.0.0"
+  },
+  "engines": { "node" : ">=4" }
 }
