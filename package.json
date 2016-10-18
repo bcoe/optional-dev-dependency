@@ -22,6 +22,9 @@
     "install"
   ],
   "author": "Ben Coe <ben@npmjs.com>",
+  "contributors": [
+    "Joe Hildebrand <joe-github@cursive.net"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bcoe/npm-optional-dev-dependency/issues"
