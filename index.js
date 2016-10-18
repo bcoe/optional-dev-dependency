@@ -65,6 +65,19 @@ module.exports = function (packages, _options, cb) {
   }, cb)
 }
 
+module.exports.readPackage = function (cb) {
+  const filename = Dependency.findNodeModules('package.json')
+  fs.readFile(filename, (er, buf) => {
+    if (er) { return cb(er) }
+    try {
+      const js = JSON.parse(buf) || {}
+      cb(null, js)
+    } catch (er) {
+      cb(er)
+    }
+  })
+}
+
 // Save all of the dependencies from the list into package.json
 // make this a property of the exported function in to retain backwards
 // compatibility.
@@ -73,10 +86,8 @@ module.exports.saveAll = function (list, options, cb) {
     cb = options
     options = {}
   }
-  const filename = Dependency.findNodeModules('package.json')
-  fs.readFile(filename, (er, buf) => {
+  module.exports.readPackage((er, pkg) => {
     if (er) { return cb(er) }
-    const pkg = JSON.parse(buf) || {}
     pkg.optionalDevDependencies = pkg.optionalDevDependencies || {}
     async.eachSeries(list, function (arg, next) {
       const parts = arg.split('@')

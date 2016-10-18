@@ -42,18 +42,19 @@ var opts = {
 }
 
 if (argv._.length === 0) {
-  try {
-    argv._ = optionalDevDependency.readPackage().optionalDevDependencies
+  optionalDevDependency.readPackage((er, pkg) => {
+    if (er) {
+      console.error(e.message)
+      process.exit(1)
+    }
+    argv._ = pkg.optionalDevDependencies
     if (!argv._ || Object.keys(argv._).length < 1) {
       yargs.showHelp()
       process.exit(64)
     } else {
       optionalDevDependency(argv._, opts)
     }
-  } catch (e) {
-    console.error(e.message)
-    process.exit(1)
-  }
+  })
 } else if (argv.save) {
   optionalDevDependency.saveAll(argv._, opts, function () {
     optionalDevDependency(argv._, opts)
