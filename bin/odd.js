@@ -44,7 +44,7 @@ var opts = {
 if (argv._.length === 0) {
   optionalDevDependency.readPackage((er, pkg) => {
     if (er) {
-      console.error(e.message)
+      console.error(er.message)
       process.exit(1)
     }
     argv._ = pkg.optionalDevDependencies

@@ -105,7 +105,7 @@ module.exports.saveAll = function (list, options, cb) {
       }
       dep.getVersion(options, next)
     }, function () {
-      fs.writeFile(filename, JSON.stringify(pkg, null, 2), cb)
+      fs.writeFile(Dependency.findNodeModules('package.json'), JSON.stringify(pkg, null, 2), cb)
     })
   })
 }
