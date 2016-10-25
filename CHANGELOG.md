@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/bcoe/optional-dev-dependency/compare/v1.3.0...v1.4.0) (2016-10-25)
+
+
+### Bug Fixes
+
+* simplify '@' splitting. ([#11](https://github.com/bcoe/optional-dev-dependency/issues/11)) ([99136ba](https://github.com/bcoe/optional-dev-dependency/commit/99136ba))
+
+
+### Features
+
+* install from optionalDevDependencies stanza in package.json ([b9c78d7](https://github.com/bcoe/optional-dev-dependency/commit/b9c78d7))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/bcoe/optional-dev-dependency/compare/v1.1.0...v1.3.0) (2016-07-08)
 
