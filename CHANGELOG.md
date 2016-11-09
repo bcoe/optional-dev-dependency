@@ -2,8 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-<a name="1.4.0"></a>
-# [1.4.0](https://github.com/bcoe/optional-dev-dependency/compare/v1.3.0...v1.4.0) (2016-10-25)
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/bcoe/optional-dev-dependency/compare/v1.3.0...v2.0.0) (2016-11-08)
 
 
 ### Bug Fixes
@@ -15,7 +15,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 * install from optionalDevDependencies stanza in package.json ([b9c78d7](https://github.com/bcoe/optional-dev-dependency/commit/b9c78d7))
 
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/bcoe/optional-dev-dependency/compare/v1.3.0...v1.4.0) (2016-10-25)
 
+Version 1.4 was unpublished on 2016-11-08, in response to bug #16, since it
+broke backward compatibility for old node versions.
 
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/bcoe/optional-dev-dependency/compare/v1.1.0...v1.3.0) (2016-07-08)

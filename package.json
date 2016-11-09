@@ -32,17 +32,17 @@
   "homepage": "https://github.com/bcoe/optional-dev-dependency#readme",
   "dependencies": {
     "async": "^2.1.2",
-    "cross-spawn": "^4.0.2",
+    "cross-spawn": "^5.0.1",
     "lodash.assign": "^4.2.0",
-    "yargs": "^6.2.0"
+    "yargs": "^6.3.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.4",
     "mocha": "^3.1.2",
-    "nyc": "^8.3.1",
+    "nyc": "^8.4.0",
     "rimraf": "^2.5.4",
-    "standard": "^8.4.0",
+    "standard": "^8.5.0",
     "standard-version": "^3.0.0"
   },
   "engines": {
