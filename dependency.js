@@ -141,14 +141,23 @@ class Dependency {
     if (Dependency.__root) {
       return path.join(Dependency.__root, filename)
     }
-    let parts = process.cwd().split(path.sep)
-    while (parts.length > 1) {
-      Dependency.__root = path.sep + path.join.apply(path, parts)
-      if (fs.existsSync(path.join(Dependency.__root, 'package.json'))) {
-        return path.join(Dependency.__root, filename)
+    // start from the current directory
+    Dependency.__root = process.cwd()
+    let hitRoot = false
+    do {
+      // check if we're at the root of the drive
+      hitRoot = Dependency.__root === path.resolve(path.sep)
+      // check the directory for the filename
+      const dir = path.join(Dependency.__root, filename)
+      if (fs.existsSync(dir)) {
+        return dir
       }
-      parts.pop()
+      if (!hitRoot) {
+        // it didn't exist, and we're not at the root so go up one directory
+        Dependency.__root = path.resolve(Dependency.__root, '..')
+      }
     }
+    while (!hitRoot)
     Dependency.clear()
     throw new Error('Not in a node package hierarchy')
   }

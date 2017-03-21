@@ -103,7 +103,9 @@ describe('dependency', function () {
     nm.should.equal(path.join(__dirname, '..', 'package.json'))
 
     Dependency.clear()
-    process.chdir('/usr')
+
+    // go to the root of the current drive
+    process.chdir(path.sep)
     ;(() => Dependency.findNodeModules()).should.throw(Error, /Not in a node package hierarchy/)
     should.not.exist(Dependency.__root)
 
