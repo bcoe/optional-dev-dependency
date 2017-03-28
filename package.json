@@ -31,19 +31,19 @@
   },
   "homepage": "https://github.com/bcoe/optional-dev-dependency#readme",
   "dependencies": {
-    "async": "^2.1.2",
-    "cross-spawn": "^5.0.1",
+    "async": "^2.2.0",
+    "cross-spawn": "^5.1.0",
     "lodash.assign": "^4.2.0",
-    "yargs": "^6.3.0"
+    "yargs": "^7.0.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "coveralls": "^2.11.4",
-    "mocha": "^3.1.2",
-    "nyc": "^8.4.0",
-    "rimraf": "^2.5.4",
-    "standard": "^8.5.0",
-    "standard-version": "^3.0.0"
+    "coveralls": "^2.12.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0",
+    "rimraf": "^2.6.1",
+    "standard": "^9.0.2",
+    "standard-version": "^4.0.0"
   },
   "engines": {
     "node": ">=4"

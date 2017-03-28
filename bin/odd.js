@@ -62,4 +62,3 @@ if (argv._.length === 0) {
 } else {
   optionalDevDependency(argv._, opts)
 }
-
